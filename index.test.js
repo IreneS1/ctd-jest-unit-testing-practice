@@ -25,12 +25,21 @@ describe('Test getting the first string from an array', () => {
         expect(utils.getFirstStringFromArray(testList)).toBe('hello');
     });
     test('Returns null for an empty array', () => {
-        // Write your test code here
+        const emptyArray = [];
+        expect(utils.getFirstStringFromArray(emptyArray)).toBe(null);
     });
     test('Returns null if no strings are in the array', () => {
-        // Write your test code here
+        const numArray = [1, 2, 3];
+        expect(utils.getFirstStringFromArray(numArray)).toBe(null);
     });
     test('Returns the second item if the first item is a number', () => {
-        // Write your test code here
+        const testArray = [1, '2', '3'];
+
+        const logic = () => {
+            if (typeof testArray[0] === "number") {
+                return testArray[1]
+            }
+        }
+        expect(utils.getFirstStringFromArray(testArray)).toBe(logic());
     });
 });
